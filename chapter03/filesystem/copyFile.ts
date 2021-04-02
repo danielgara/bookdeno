@@ -1,0 +1,1 @@
+await Deno.copyFile("./sentence.txt", "./copied-sentence.txt");
