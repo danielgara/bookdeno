@@ -4,8 +4,6 @@ import { MuseumDAO } from "./models/MuseumDAO.ts";
 import { Museum } from "./models/Museum.ts";
 
 const museumDAO = new MuseumDAO();
-const museumController = new MuseumController(museumDAO);
-
 const m1 = new Museum(
   "1fbdd2a9-1b97-46e0-b450-62819e5772ff",
   "The Louvre",
@@ -15,7 +13,8 @@ const m1 = new Museum(
     lng: "2.338629",
   }
 );
-
 museumDAO.storage.set("1fbdd2a9-1b97-46e0-b450-62819e5772ff", m1);
+
+const museumController = new MuseumController(museumDAO);
 
 createServer(8080, museumController);
