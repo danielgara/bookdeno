@@ -1,4 +1,7 @@
-import type { MuseumControllerInterface, MuseumDAOInterface } from "../interfaces/MuseumInterfaces.ts";
+import type {
+  MuseumControllerInterface,
+  MuseumDAOInterface,
+} from "../interfaces/MuseumInterfaces.ts";
 
 export class MuseumController implements MuseumControllerInterface {
   museumDAO: MuseumDAOInterface;

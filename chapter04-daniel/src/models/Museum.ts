@@ -1,16 +1,16 @@
 export class Museum {
-  private id:string;
+  private id: string;
 
-  private name:string;
+  private name: string;
 
-  private description:string;
+  private description: string;
 
   private location: {
     lat: string;
     lng: string;
   };
 
-  public constructor(id: string, name:string, description:string, location:{
+  public constructor(id: string, name: string, description: string, location: {
     lat: string;
     lng: string;
   }) {
@@ -20,19 +20,19 @@ export class Museum {
     this.location = location;
   }
 
-	public getId(): string {
-		return this.id;
-	}
+  public getId(): string {
+    return this.id;
+  }
 
-  public getName() : string{
-		return this.name;
-	}
+  public getName(): string {
+    return this.name;
+  }
 
-	public getDescription(): string {
-		return this.description;
-	}
+  public getDescription(): string {
+    return this.description;
+  }
 
-	public getLocation(): {lat:string, lng:string} {
-		return this.location;
-	}
+  public getLocation(): { lat: string; lng: string } {
+    return this.location;
+  }
 }

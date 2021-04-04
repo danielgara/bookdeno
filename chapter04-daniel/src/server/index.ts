@@ -1,7 +1,10 @@
 import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
 import type { MuseumControllerInterface } from "../interfaces/MuseumInterfaces.ts";
 
-export async function createServer(port : number, museum: MuseumControllerInterface) {
+export async function createServer(
+  port: number,
+  museum: MuseumControllerInterface,
+) {
   const server = serve({ port });
 
   console.log(`Server running at http://localhost:${port}`);

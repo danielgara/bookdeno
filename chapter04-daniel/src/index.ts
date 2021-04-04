@@ -11,7 +11,7 @@ const m1 = new Museum(
   {
     lat: "48.860294",
     lng: "2.338629",
-  }
+  },
 );
 museumDAO.storage.set("1fbdd2a9-1b97-46e0-b450-62819e5772ff", m1);
 
