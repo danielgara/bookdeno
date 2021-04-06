@@ -1,0 +1,39 @@
+import { Database, MongoClient } from "./deps.ts";
+import { createServer } from "./web/index.ts";
+import {
+  Controller as UserController,
+  Repository as UserRepository,
+  } from './users/index.ts';
+import {
+  Controller as MuseumController,
+  Repository as MuseumRepository,
+} from "./museums/index.ts";
+
+const client = new MongoClient();
+client.connectWithUri(
+  "mongodb+srv://adminuser:<<pass>>@cluster0.3h1po.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+);
+const db = client.database("bookdeno");
+
+const userRepository = new UserRepository({ storage: db });
+const userController = new UserController({ userRepository });
+
+const museumRepository = new MuseumRepository();
+const museumController = new MuseumController({ museumRepository });
+
+museumRepository.storage.set("1fbdd2a9-1b97-46e0-b450-62819e5772ff", {
+  id: "1fbdd2a9-1b97-46e0-b450-62819e5772ff",
+  name: "The Louvre",
+  description:
+    "The world's largest art museum and a historic monument in Paris, France.",
+  location: {
+    lat: "48.860294",
+    lng: "2.338629",
+  },
+});
+
+createServer({
+  configuration: { port: 8080 },
+  museum: museumController,
+  user: userController,
+});
