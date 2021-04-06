@@ -1,0 +1,11 @@
+web:
+  port: 8080
+cors:
+  allowedOrigins:
+    - http://localhost:3000
+https:
+  key: ./key.pem
+  certificate: ./certificate.pem
+mongoDb:
+  clusterURI: mongodb+srv://adminuser:Hola1234.@cluster0.3h1po.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  database: bookdeno
