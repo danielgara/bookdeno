@@ -7,5 +7,5 @@ https:
   key: ./key.pem
   certificate: ./certificate.pem
 mongoDb:
-  clusterURI: mongodb+srv://adminuser:Hola1234.@cluster0.3h1po.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  clusterURI: mongodb+srv://adminuser:<<pass>>@cluster0.3h1po.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
   database: bookdeno
